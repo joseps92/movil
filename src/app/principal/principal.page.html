@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-searchbar color="danger" placeholder="Buscar" (keyup.enter)="obtenerMusic()" [(ngModel)]="buscar"></ion-searchbar>
+      <br>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="card-background-page">
+    
+    <ion-card *ngFor="let item of musicas">
+        <img [src]="item.artist.picture"/>
+        <div class="card-title">{{item.title}}</div>
+        <div class="card-subtitle">{{item.Listings}}</div>
+        <div class="card-subtitle"><audio controls><source [src]="item.preview" type="audio/ogg"> </audio></div>
+      </ion-card>
+    
+      
+    
+</ion-content>
